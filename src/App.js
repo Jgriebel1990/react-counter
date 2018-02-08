@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Email from './Email';
+import LoginForm from './LoginForm';
 
 class App extends Component {
   constructor (){
@@ -43,6 +44,7 @@ render(){
         <input type="number" className='form-control' onChange={this.handleValueChange} value={this.state.value}/>
       </div>
       <Email />
+      <LoginForm />
     </div>
   );
 }
