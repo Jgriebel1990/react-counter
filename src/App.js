@@ -5,7 +5,7 @@ class App extends Component {
     super();
     this.state = {
         count: 0,
-        numberInterval: 1000
+        value: 1
     }
     this.increment = this.increment.bind(this); //binding mean inside of "increment" the 
                             // "this" keyword is the component
@@ -13,32 +13,34 @@ class App extends Component {
 
     this.reset = this.reset.bind(this);
 
+    this.handleValueChange = this.handleValueChange.bind(this);
+
   }
   
 increment(){
-  this.setState({count: this.state.count + 1});
+  this.setState({count: this.state.count + this.state.value});
 }
 decrement(){
-  this.setState({count: this.state.count - 1});
+  this.setState({count: this.state.count - this.state.value});
 }
 reset(){
   this.setState({count: this.state.reset = 0});
 }
-interval = (e) => {
-  const change = e.target.options[e.target.selectedIndex].value;
-  this.setState({numberInterval: onChange})
+
+handleValueChange(e){
+  this.setState({value: +e.target.value });
 }
+
 render(){
   return (
     <div>
-      <button onClick={this.increment}>+</button>
-      <button onClick={this.decrement}>-</button>
       <h1>{this.state.count}</h1>
-      <button onClick={this.reset}>Reset</button>
-      <button onChange={this.interval}>
-        interval
-        <input type="text"/>
-      </button>
+      <button className='btn btn-success' onClick={this.reset}>Reset</button>
+      <button className='btn btn-primary' onClick={this.increment}>+</button>
+      <button className='btn btn-danger' onClick={this.decrement}>-</button>
+      <div className='form-group'>
+        <input type="number" className='form-control' onChange={this.handleValueChange} value={this.state.value}/>
+      </div>
     </div>
   );
 }
