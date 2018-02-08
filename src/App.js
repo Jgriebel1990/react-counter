@@ -33,21 +33,21 @@ handleValueChange(e){
   this.setState({value: +e.target.value });
 }
 
-render(){
-  return (
-    <div>
-      <h1>{this.state.count}</h1>
-      <button className='btn btn-success d-flex justify-content-center' onClick={this.reset}>Reset</button>
-      <button className='btn btn-primary' onClick={this.increment}>+</button>
-      <button className='btn btn-danger' onClick={this.decrement}>-</button>
+  render(){
+    return (
       <div>
-        <input type="number" className='form-control' onChange={this.handleValueChange} value={this.state.value}/>
+        <h1>{this.state.count}</h1>
+        <button className='btn btn-success d-flex justify-content-center' onClick={this.reset}>Reset</button>
+        <button className='btn btn-primary' onClick={this.increment}>+</button>
+        <button className='btn btn-danger' onClick={this.decrement}>-</button>
+        <div>
+          <input type="number" className='form-control' onChange={this.handleValueChange} value={this.state.value}/>
+        </div>
+        <Email />
+        <LoginForm />
       </div>
-      <Email />
-      <LoginForm />
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default App;
