@@ -12,11 +12,10 @@ class LoginForm extends Component {
                         <input type="email" className='form-control' placeholder='Phone, email or username'/>
                     </div>
                     <div>
-                        <label htmlFor=""></label>
-                        <input type="text"/>
+                        <input type="text" className='form-control' placeholder='Password'/>
                     </div>
                     <button type='submit' className='btn btn-primary' onClick={()=>{ alert('alert'); }}>Log In</button>
-                    <input type="checkbox" className='form-check-input'/>
+                    <input type="checkbox" className='form-check-input '/>
                     <label className='form-check-label'>Remember me</label>
                 </form>
             </div>
